@@ -54,6 +54,15 @@ flutter:
     - images/pic1.jpg
     - images/pic3.jpg
 
+    - images/categories/accessories.png
+    - images/categories/dress.png
+    - images/categories/formal.png
+    - images/categories/informal.png
+    - images/categories/jeans.png
+    - images/categories/shoe.png
+    - images/categories/tshirt.png
+
+
 
 
 

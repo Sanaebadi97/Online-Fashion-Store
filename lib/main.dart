@@ -2,6 +2,9 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+/*my own imports*/
+import 'package:flutter_wp/componets/horizontal_listview.dart';
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.pinkAccent, // navigation bar color
@@ -33,7 +36,6 @@ class _HomePageState extends State<HomePage> {
           AssetImage('images/pic4.jpeg'),
           AssetImage('images/pic5.jpeg'),
           AssetImage('images/pic6.jpeg'),
-
         ],
         autoplay: true,
         dotSize: 6,
@@ -162,7 +164,23 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: new ListView(
-        children: <Widget>[image_carousel],
+        children: <Widget>[
+          //image carousel begins here
+          image_carousel,
+
+          //Padding widget
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: Text('Categories'),
+          ),
+          //Horizontal list view begins here
+          HorizontalList(),
+          //padding widget
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Text('Recent products'),
+          ),
+        ],
       ),
     );
   }
