@@ -32,11 +32,11 @@ class _HomePageState extends State<HomePage> {
       child: new Carousel(
         boxFit: BoxFit.cover,
         images: [
-          AssetImage('images/pic1.jpg'),
-          AssetImage('images/pic2.jpeg'),
-          AssetImage('images/pic4.jpeg'),
-          AssetImage('images/pic5.jpeg'),
-          AssetImage('images/pic6.jpeg'),
+          AssetImage('assets/images/pic1.jpg'),
+          AssetImage('assets/images/pic2.jpeg'),
+          AssetImage('assets/images/pic4.jpeg'),
+          AssetImage('assets/images/pic5.jpeg'),
+          AssetImage('assets/images/pic6.jpeg'),
         ],
         autoplay: true,
         dotSize: 6,
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.pinkAccent,
-        title: Text('SanaShop'),
+        title: Text('SanaShop',style: TextStyle(fontFamily: 'Raleway')),
         actions: <Widget>[
           IconButton(
             onPressed: () {},
@@ -74,13 +74,13 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             //header View For Drawer layout
             UserAccountsDrawerHeader(
-              accountEmail: Text('sebadi@gmail.com'),
-              accountName: Text('Sana Ebadi'),
+              accountEmail: Text('sebadi@gmail.com',style: TextStyle(fontFamily: 'Raleway')),
+              accountName: Text('Sana Ebadi',style: TextStyle(fontFamily: 'Raleway')),
               currentAccountPicture: GestureDetector(
                 child: CircleAvatar(
                   radius: 30.0,
-                  backgroundImage: NetworkImage(
-                      'https://sanaebadi.info/Resume/sana_profile.jpg'),
+                  backgroundImage: AssetImage(
+                      'assets/images/sana_profile.jpg'),
                   backgroundColor: Colors.transparent,
                 ),
               ),
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('Home Page'),
+                title: Text('Home Page', style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.home,
                   color: Colors.redAccent,
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('My Account'),
+                title: Text('My Account',style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.person,
                   color: Colors.redAccent,
@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('My Orders'),
+                title: Text('My Orders',style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.shopping_basket,
                   color: Colors.redAccent,
@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('Categories'),
+                title: Text('Categories',style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.dashboard,
                   color: Colors.redAccent,
@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('Favourites'),
+                title: Text('Favourites',style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.favorite,
                   color: Colors.redAccent,
@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('Settings'),
+                title: Text('Settings',style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.settings,
                   color: Colors.grey,
@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('About'),
+                title: Text('About',style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.help,
                   color: Colors.blueAccent,
@@ -172,14 +172,14 @@ class _HomePageState extends State<HomePage> {
           //Padding widget
           Padding(
             padding: const EdgeInsets.all(8),
-            child: Text('Categories'),
+            child: Text('Categories',style: TextStyle(fontFamily: 'Raleway')),
           ),
           //Horizontal list view begins here
           HorizontalList(),
           //padding widget
           Padding(
             padding: const EdgeInsets.all(20),
-            child: Text('Recent products'),
+            child: Text('Recent products',style: TextStyle(fontFamily: 'Raleway')),
           ),
 
           //grid view

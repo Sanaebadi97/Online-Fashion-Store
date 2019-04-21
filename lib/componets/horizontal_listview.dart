@@ -10,31 +10,31 @@ class HorizontalList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           Category(
-            image_location: 'images/categories/tshirt.png',
+            image_location: 'assets/images/categories/tshirt.png',
             image_caption: 'shirt',
           ),
           Category(
-            image_location: 'images/categories/dress.png',
+            image_location: 'assets/images/categories/dress.png',
             image_caption: 'dress',
           ),
           Category(
-            image_location: 'images/categories/jeans.png',
+            image_location: 'assets/images/categories/jeans.png',
             image_caption: 'pants',
           ),
           Category(
-            image_location: 'images/categories/formal.png',
+            image_location: 'assets/images/categories/formal.png',
             image_caption: 'formal',
           ),
           Category(
-            image_location: 'images/categories/informal.png',
+            image_location: 'assets/images/categories/informal.png',
             image_caption: 'informal',
           ),
           Category(
-            image_location: 'images/categories/accessories.png',
+            image_location: 'assets/images/categories/accessories.png',
             image_caption: 'accessories',
           ),
           Category(
-            image_location: 'images/categories/shoe.png',
+            image_location: 'assets/images/categories/shoe.png',
             image_caption: 'shoe',
           ),
         ],
@@ -61,8 +61,8 @@ class Category extends StatelessWidget {
           child: ListTile(
             title: Image.asset(
               image_location,
-              width: 70,
-              height: 60,
+              width: 80,
+              height: 75,
             ),
             subtitle: Padding(
               padding: const EdgeInsets.all(4.0),
@@ -70,7 +70,7 @@ class Category extends StatelessWidget {
                 alignment: Alignment.topCenter,
                 child: Text(
                   image_caption,
-                  style: TextStyle(fontSize: 13, fontWeight: FontWeight.normal),
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold,fontFamily: 'Raleway'),
                 ),
               ),
             ),

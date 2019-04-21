@@ -9,73 +9,73 @@ class _ProductsState extends State<Products> {
   var products_list = [
     {
       "name": "Blazer",
-      "picture": "images/products/blazer1.jpeg",
+      "picture": "assets/images/products/blazer1.jpeg",
       "old_price": 120,
       "price": 85
     },
     {
       "name": "Blazer",
-      "picture": "images/products/blazer2.jpeg",
+      "picture": "assets/images/products/blazer2.jpeg",
       "old_price": 78,
       "price": 67
     },
     {
       "name": "Dress",
-      "picture": "images/products/dress1.jpeg",
+      "picture": "assets/images/products/dress1.jpeg",
       "old_price": 45,
       "price": 89
     },
     {
       "name": "Dress",
-      "picture": "images/products/dress2.jpeg",
+      "picture": "assets/images/products/dress2.jpeg",
       "old_price": 23,
       "price": 78
     },
     {
       "name": "Hills",
-      "picture": "images/products/hills1.jpeg",
+      "picture": "assets/images/products/hills1.jpeg",
       "old_price": 34,
       "price": 67
     },
     {
       "name": "Dress",
-      "picture": "images/products/hills2.jpeg",
+      "picture": "assets/images/products/hills2.jpeg",
       "old_price": 98,
       "price": 34
     },
     {
       "name": "Dress",
-      "picture": "images/products/hills2.jpeg",
+      "picture": "assets/images/products/hills2.jpeg",
       "old_price": 98,
       "price": 45
     },
     {
       "name": "Pants",
-      "picture": "images/products/pants1.jpg",
+      "picture": "assets/images/products/pants1.jpg",
       "old_price": 67,
       "price": 45
     },
     {
       "name": "Pants",
-      "picture": "images/products/pants2.jpeg",
+      "picture": "assets/images/products/pants2.jpeg",
       "old_price": 34,
       "price": 23
     },
     {
       "name": "Shoe",
-      "picture": "images/products/shoe1.jpg",
+      "picture": "assets/images/products/shoe1.jpg",
       "old_price": 400,
       "price": 389
     },
     {
       "name": "Skirt",
-      "picture": "images/products/skt1.jpeg",
+      "picture": "assets/images/products/skt1.jpeg",
       "old_price": 67,
       "price": 56
     },
     {
       "name": "Skirt",
-      "picture": "images/products/skt2.jpeg",
+      "picture": "assets/images/products/skt2.jpeg",
       "old_price": 55,
       "price": 34
     },
@@ -123,18 +123,21 @@ class SingleProd extends StatelessWidget {
                   child: ListTile(
                     leading: Text(
                       prod_name,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontFamily: 'Raleway'),
                     ),
                     title: Text(
                       "\$$prod_price",
                       style: TextStyle(
-                          color: Colors.redAccent, fontWeight: FontWeight.w800),
+                          color: Colors.redAccent,
+                          fontWeight: FontWeight.w800,
+                          fontFamily: 'Raleway'),
                     ),
                     subtitle: Text("\$$prod_old_price",
                         style: TextStyle(
                             color: Colors.black87,
                             fontWeight: FontWeight.w800,
-                        decoration: TextDecoration.lineThrough)),
+                            decoration: TextDecoration.lineThrough)),
                   ),
                 ),
                 child: Image.asset(
