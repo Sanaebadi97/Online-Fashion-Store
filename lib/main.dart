@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 
 /*my own imports*/
 import 'package:flutter_wp/componets/horizontal_listview.dart';
+import 'package:flutter_wp/componets/products.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -180,6 +181,12 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(20),
             child: Text('Recent products'),
           ),
+
+          //grid view
+          Container(
+            height: 320,
+            child: Products(),
+          )
         ],
       ),
     );

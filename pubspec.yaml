@@ -62,6 +62,19 @@ flutter:
     - images/categories/shoe.png
     - images/categories/tshirt.png
 
+    - images/products/blazer1.jpeg
+    - images/products/blazer2.jpeg
+    - images/products/dress1.jpeg
+    - images/products/dress2.jpeg
+    - images/products/hills1.jpeg
+    - images/products/hills2.jpeg
+    - images/products/pants1.jpg
+    - images/products/pants2.jpeg
+    - images/products/shoe1.jpg
+    - images/products/skt1.jpeg
+    - images/products/skt2.jpeg
+
+
 
 
 
