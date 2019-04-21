@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// ignore: slash_for_doc_comments
+/*****************HORIZONTAL LIST FOR CATEGORY*********************************8*/
+
 class HorizontalList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

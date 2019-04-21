@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wp/pages/product_details.dart';
+
+// ignore: slash_for_doc_comments
+/*****************RECENT PRODUCT CLASS*********************************8*/
 
 class Products extends StatefulWidget {
   @override
@@ -116,7 +120,8 @@ class SingleProd extends StatelessWidget {
           tag: prod_name,
           child: Material(
             child: InkWell(
-              onTap: () {},
+              onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => ProductDetails())),
               child: GridTile(
                 footer: Container(
                   color: Colors.white70,

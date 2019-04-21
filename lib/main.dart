@@ -2,7 +2,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-/*my own imports*/
+/*Own IMports*/
 import 'package:flutter_wp/componets/horizontal_listview.dart';
 import 'package:flutter_wp/componets/products.dart';
 
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.pinkAccent,
-        title: Text('SanaShop',style: TextStyle(fontFamily: 'Raleway')),
+        title: Text('SanaShop', style: TextStyle(fontFamily: 'Raleway')),
         actions: <Widget>[
           IconButton(
             onPressed: () {},
@@ -74,13 +74,14 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             //header View For Drawer layout
             UserAccountsDrawerHeader(
-              accountEmail: Text('sebadi@gmail.com',style: TextStyle(fontFamily: 'Raleway')),
-              accountName: Text('Sana Ebadi',style: TextStyle(fontFamily: 'Raleway')),
+              accountEmail: Text('sebadi@gmail.com',
+                  style: TextStyle(fontFamily: 'Raleway')),
+              accountName:
+                  Text('Sana Ebadi', style: TextStyle(fontFamily: 'Raleway')),
               currentAccountPicture: GestureDetector(
                 child: CircleAvatar(
                   radius: 30.0,
-                  backgroundImage: AssetImage(
-                      'assets/images/sana_profile.jpg'),
+                  backgroundImage: AssetImage('assets/images/sana_profile.jpg'),
                   backgroundColor: Colors.transparent,
                 ),
               ),
@@ -91,7 +92,8 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('Home Page', style: TextStyle(fontFamily: 'Raleway')),
+                title:
+                    Text('Home Page', style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.home,
                   color: Colors.redAccent,
@@ -101,7 +103,8 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('My Account',style: TextStyle(fontFamily: 'Raleway')),
+                title:
+                    Text('My Account', style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.person,
                   color: Colors.redAccent,
@@ -111,7 +114,8 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('My Orders',style: TextStyle(fontFamily: 'Raleway')),
+                title:
+                    Text('My Orders', style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.shopping_basket,
                   color: Colors.redAccent,
@@ -121,7 +125,8 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('Categories',style: TextStyle(fontFamily: 'Raleway')),
+                title:
+                    Text('Categories', style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.dashboard,
                   color: Colors.redAccent,
@@ -131,7 +136,8 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('Favourites',style: TextStyle(fontFamily: 'Raleway')),
+                title:
+                    Text('Favourites', style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.favorite,
                   color: Colors.redAccent,
@@ -144,7 +150,8 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('Settings',style: TextStyle(fontFamily: 'Raleway')),
+                title:
+                    Text('Settings', style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.settings,
                   color: Colors.grey,
@@ -154,7 +161,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('About',style: TextStyle(fontFamily: 'Raleway')),
+                title: Text('About', style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.help,
                   color: Colors.blueAccent,
@@ -166,23 +173,26 @@ class _HomePageState extends State<HomePage> {
       ),
       body: new ListView(
         children: <Widget>[
-          //image carousel begins here
+          /**********************image carousel begins here***********************************/
           image_carousel,
 
           //Padding widget
           Padding(
             padding: const EdgeInsets.all(8),
-            child: Text('Categories',style: TextStyle(fontFamily: 'Raleway')),
-          ),
-          //Horizontal list view begins here
-          HorizontalList(),
-          //padding widget
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Text('Recent products',style: TextStyle(fontFamily: 'Raleway')),
+            child: Text('Categories', style: TextStyle(fontFamily: 'Raleway')),
           ),
 
-          //grid view
+          /************ Horizontal list view begins here ************/
+          HorizontalList(),
+
+          /**********padding widget *************/
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Text('Recent products',
+                style: TextStyle(fontFamily: 'Raleway')),
+          ),
+
+          /*************grid view recent product********************8*/
           Container(
             height: 320,
             child: Products(),
