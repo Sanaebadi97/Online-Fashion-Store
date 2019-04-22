@@ -12,7 +12,7 @@ class Products extends StatefulWidget {
 class _ProductsState extends State<Products> {
   var products_list = [
     {
-      "name": "Blazer",
+      "name": "Blazer1",
       "picture": "assets/images/products/blazer1.jpeg",
       "old_price": 120,
       "price": 85
@@ -24,13 +24,13 @@ class _ProductsState extends State<Products> {
       "price": 67
     },
     {
-      "name": "Dress",
+      "name": "Dress1",
       "picture": "assets/images/products/dress1.jpeg",
       "old_price": 45,
       "price": 89
     },
     {
-      "name": "Dress",
+      "name": "Dress2",
       "picture": "assets/images/products/dress2.jpeg",
       "old_price": 23,
       "price": 78
@@ -48,7 +48,7 @@ class _ProductsState extends State<Products> {
       "price": 34
     },
     {
-      "name": "Dress",
+      "name": "Dress3",
       "picture": "assets/images/products/hills2.jpeg",
       "old_price": 98,
       "price": 45
@@ -60,7 +60,7 @@ class _ProductsState extends State<Products> {
       "price": 45
     },
     {
-      "name": "Pants",
+      "name": "Pants1",
       "picture": "assets/images/products/pants2.jpeg",
       "old_price": 34,
       "price": 23
@@ -78,7 +78,7 @@ class _ProductsState extends State<Products> {
       "price": 56
     },
     {
-      "name": "Skirt",
+      "name": "Skirt2",
       "picture": "assets/images/products/skt2.jpeg",
       "old_price": 55,
       "price": 34
@@ -120,8 +120,12 @@ class SingleProd extends StatelessWidget {
           tag: prod_name,
           child: Material(
             child: InkWell(
-              onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => ProductDetails())),
+
+              /*Passing the value from Product to product details*/
+
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => ProductDetails(
+                      prod_name, prod_price, prod_old_price, prod_pics))),
               child: GridTile(
                 footer: Container(
                   color: Colors.white70,
