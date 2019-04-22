@@ -89,7 +89,35 @@ class _ProductDetailsState extends State<ProductDetails> {
 
               Expanded(
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text('size',
+                                style: TextStyle(
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Raleway')),
+                            content: Text('Choose the size',
+                                style: TextStyle(
+                                    color: Colors.black87,
+                                    fontFamily: 'Raleway')),
+                            actions: <Widget>[
+                              MaterialButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop(context);
+                                },
+                                child: Text('Close',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w800,
+                                        color: Colors.redAccent,
+                                        fontFamily: 'Raleway')),
+                              ),
+                            ],
+                          );
+                        });
+                  },
                   color: Colors.white,
                   elevation: 0.2,
                   textColor: Colors.grey,
@@ -110,7 +138,33 @@ class _ProductDetailsState extends State<ProductDetails> {
 
               Expanded(
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                              title: Text('Color',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Raleway')),
+                              content: Text('Choose the color',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontFamily: 'Raleway')),
+                              actions: <Widget>[
+                                MaterialButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop(context);
+                                    },
+                                    child: Text('Close',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w800,
+                                            color: Colors.redAccent,
+                                            fontFamily: 'Raleway')))
+                              ]);
+                        });
+                  },
                   color: Colors.white,
                   elevation: 0.2,
                   textColor: Colors.grey,
@@ -128,7 +182,33 @@ class _ProductDetailsState extends State<ProductDetails> {
               ),
               Expanded(
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                              title: Text('Quantity',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Raleway')),
+                              content: Text('Choose the quantity',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontFamily: 'Raleway')),
+                              actions: <Widget>[
+                                MaterialButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop(context);
+                                    },
+                                    child: Text('Close',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w800,
+                                            color: Colors.redAccent,
+                                            fontFamily: 'Raleway')))
+                              ]);
+                        });
+                  },
                   color: Colors.white,
                   elevation: 0.2,
                   textColor: Colors.grey,
@@ -175,6 +255,89 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
               ],
             ),
+          ),
+          Divider(
+            color: Colors.transparent,
+          ),
+          ListTile(
+            title: Text('Product details',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontFamily: 'Raleway')),
+            subtitle: Text(
+                'Lorem Ipsum is simply dummy text of the printin and typesetting industry.. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknownprinter took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ',
+                style: TextStyle(color: Colors.black87, fontFamily: 'Raleway')),
+          ),
+          Divider(),
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  12,
+                  5,
+                  5,
+                  5,
+                ),
+                child: Text(
+                  'Product name',
+                  style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black54,
+                      fontFamily: 'Raleway'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: Text(widget.prod_details_name),
+              )
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  12,
+                  5,
+                  5,
+                  5,
+                ),
+                child: Text(
+                  'Product brand',
+                  style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black54,
+                      fontFamily: 'Raleway'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: Text('Brand X'),
+              )
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  12,
+                  5,
+                  5,
+                  5,
+                ),
+                child: Text(
+                  'Product condition',
+                  style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black54,
+                      fontFamily: 'Raleway'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: Text('NEW'),
+              )
+            ],
           ),
         ],
       ),
