@@ -12,59 +12,34 @@ class Products extends StatefulWidget {
 class _ProductsState extends State<Products> {
   var products_list = [
     {
-      "name": "Blazer1",
+      "name": "Blazer",
       "picture": "assets/images/products/blazer1.jpeg",
       "old_price": 120,
       "price": 85
     },
+
     {
-      "name": "Blazer",
-      "picture": "assets/images/products/blazer2.jpeg",
-      "old_price": 78,
-      "price": 67
-    },
-    {
-      "name": "Dress1",
+      "name": "Dress",
       "picture": "assets/images/products/dress1.jpeg",
       "old_price": 45,
       "price": 89
     },
-    {
-      "name": "Dress2",
-      "picture": "assets/images/products/dress2.jpeg",
-      "old_price": 23,
-      "price": 78
-    },
+
     {
       "name": "Hills",
       "picture": "assets/images/products/hills1.jpeg",
       "old_price": 34,
       "price": 67
     },
-    {
-      "name": "Dress",
-      "picture": "assets/images/products/hills2.jpeg",
-      "old_price": 98,
-      "price": 34
-    },
-    {
-      "name": "Dress3",
-      "picture": "assets/images/products/hills2.jpeg",
-      "old_price": 98,
-      "price": 45
-    },
+
+
     {
       "name": "Pants",
       "picture": "assets/images/products/pants1.jpg",
       "old_price": 67,
       "price": 45
     },
-    {
-      "name": "Pants1",
-      "picture": "assets/images/products/pants2.jpeg",
-      "old_price": 34,
-      "price": 23
-    },
+
     {
       "name": "Shoe",
       "picture": "assets/images/products/shoe1.jpg",
@@ -77,12 +52,7 @@ class _ProductsState extends State<Products> {
       "old_price": 67,
       "price": 56
     },
-    {
-      "name": "Skirt2",
-      "picture": "assets/images/products/skt2.jpeg",
-      "old_price": 55,
-      "price": 34
-    },
+
   ];
 
   @override
