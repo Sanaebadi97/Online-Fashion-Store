@@ -145,6 +145,7 @@ class SingleProd extends StatelessWidget {
                     subtitle: Text("\$$prod_old_price",
                         style: TextStyle(
                             color: Colors.black87,
+                            fontFamily: 'Raleway',
                             fontWeight: FontWeight.w800,
                             decoration: TextDecoration.lineThrough)),
                   ),
