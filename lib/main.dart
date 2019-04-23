@@ -1,10 +1,9 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-/*Own IMports*/
 import 'package:flutter_wp/componets/horizontal_listview.dart';
 import 'package:flutter_wp/componets/products.dart';
+import 'package:flutter_wp/pages/shopping_cart.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -61,7 +60,10 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ShoppingCart()));
+            },
             icon: Icon(
               Icons.shopping_cart,
               color: Colors.white,
@@ -123,10 +125,13 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ShoppingCart()));
+              },
               child: ListTile(
-                title:
-                    Text('Shopping Cart', style: TextStyle(fontFamily: 'Raleway')),
+                title: Text('Shopping Cart',
+                    style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
                   Icons.shopping_cart,
                   color: Colors.redAccent,
