@@ -1,5 +1,5 @@
+import 'package:Sana_Shop/pages/product_details.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_wp/pages/product_details.dart';
 
 // ignore: slash_for_doc_comments
 /*****************RECENT PRODUCT CLASS*********************************8*/
@@ -56,11 +56,14 @@ class _ProductsState extends State<Products> {
       gridDelegate:
           SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (BuildContext context, int index) {
-        return SingleProd(
-          prod_name: products_list[index]['name'],
-          prod_pics: products_list[index]['picture'],
-          prod_old_price: products_list[index]['old_price'],
-          prod_price: products_list[index]['price'],
+        return Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: SingleProd(
+            prod_name: products_list[index]['name'],
+            prod_pics: products_list[index]['picture'],
+            prod_old_price: products_list[index]['old_price'],
+            prod_price: products_list[index]['price'],
+          ),
         );
       },
     );

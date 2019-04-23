@@ -1,4 +1,4 @@
-# flutter_wp
+# flutter_shop
 
 A new Flutter application.
 

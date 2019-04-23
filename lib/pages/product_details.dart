@@ -1,6 +1,7 @@
+import 'package:Sana_Shop/componets/products.dart';
+import 'package:Sana_Shop/main.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_wp/componets/products.dart';
-import 'package:flutter_wp/main.dart';
+
 
 class ProductDetails extends StatefulWidget {
   final prod_details_name;

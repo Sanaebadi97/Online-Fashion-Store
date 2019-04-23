@@ -1,4 +1,4 @@
-package sanaebadi.flutter_wp
+package sanaebadi.flutter_shop
 
 import android.os.Bundle
 

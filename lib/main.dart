@@ -1,9 +1,10 @@
+import 'package:Sana_Shop/componets/horizontal_listview.dart';
+import 'package:Sana_Shop/componets/products.dart';
+import 'package:Sana_Shop/pages/shopping_cart.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_wp/componets/horizontal_listview.dart';
-import 'package:flutter_wp/componets/products.dart';
-import 'package:flutter_wp/pages/shopping_cart.dart';
+
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -176,30 +177,35 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: new ListView(
+      body: new Column(
         children: <Widget>[
           /**********************image carousel begins here***********************************/
           image_carousel,
 
           //Padding widget
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: Text('Categories', style: TextStyle(fontFamily: 'Raleway')),
+          Container(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Text('Categories', style: TextStyle(fontFamily: 'Raleway')),
+            ),
           ),
 
           /************ Horizontal list view begins here ************/
           HorizontalList(),
 
           /**********padding widget *************/
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Text('Recent products',
-                style: TextStyle(fontFamily: 'Raleway')),
+          Container(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text('Recent products',
+                  style: TextStyle(fontFamily: 'Raleway')),
+            ),
           ),
 
           /*************grid view recent product********************8*/
-          Container(
-            height: 320,
+          Flexible(
             child: Products(),
           )
         ],

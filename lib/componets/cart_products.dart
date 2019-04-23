@@ -139,12 +139,12 @@ class SingleCartProduct extends StatelessWidget {
         trailing: Column(
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.arrow_drop_up),
+              icon: Icon(Icons.arrow_drop_up,size: 7,),
               onPressed: () {},
             ),
             Text('$cart_prod_quantity'),
             IconButton(
-              icon: Icon(Icons.arrow_drop_down),
+              icon: Icon(Icons.arrow_drop_down,size: 10,),
               onPressed: () {},
             ),
           ],
