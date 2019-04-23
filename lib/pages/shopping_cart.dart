@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wp/componets/cart_products.dart';
 
 class ShoppingCart extends StatefulWidget {
   @override
@@ -9,6 +10,8 @@ class _ShoppingCartState extends State<ShoppingCart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.pinkAccent,
@@ -23,6 +26,13 @@ class _ShoppingCartState extends State<ShoppingCart> {
           ),
         ],
       ),
+
+      /*================== Card Products ============*/
+      body: CartProducts(),
+
+
+      /*================== Card Products ============*/
+
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(0),
         child: Container(
