@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wp/componets/products.dart';
+import 'package:flutter_wp/main.dart';
 
 class ProductDetails extends StatefulWidget {
   final prod_details_name;
@@ -21,19 +23,17 @@ class _ProductDetailsState extends State<ProductDetails> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.pinkAccent,
-        title: Text('SanaShop', style: TextStyle(fontFamily: 'Raleway')),
+        title: InkWell(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
+            },
+            child: Text('SanaShop', style: TextStyle(fontFamily: 'Raleway'))),
         actions: <Widget>[
           IconButton(
             onPressed: () {},
             icon: Icon(
               Icons.search,
-              color: Colors.white,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.shopping_cart,
               color: Colors.white,
             ),
           ),
@@ -63,18 +63,18 @@ class _ProductDetailsState extends State<ProductDetails> {
                   title: Row(
                     children: <Widget>[
                       Expanded(
+                          child: Text("\$${widget.prod_details_new_price}",
+                              style: TextStyle(
+                                  color: Colors.redAccent,
+                                  fontWeight: FontWeight.w800,
+                                  fontFamily: 'Raleway'))),
+                      Expanded(
                           child: Text("\$${widget.prod_details_old_price}",
                               style: TextStyle(
                                   color: Colors.black87,
                                   fontFamily: 'Raleway',
                                   fontWeight: FontWeight.w800,
                                   decoration: TextDecoration.lineThrough))),
-                      Expanded(
-                          child: Text("\$${widget.prod_details_new_price}",
-                              style: TextStyle(
-                                  color: Colors.redAccent,
-                                  fontWeight: FontWeight.w800,
-                                  fontFamily: 'Raleway'))),
                     ],
                   ),
                 ),
@@ -339,7 +339,134 @@ class _ProductDetailsState extends State<ProductDetails> {
               )
             ],
           ),
+          Divider(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text('Similar Products',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontFamily: 'Raleway')),
+          ),
+
+          /*============== SIMILAR PRODUCT ==========*/
+          Container(
+            height: 360,
+            child: SimilarProduct(),
+          )
         ],
+      ),
+    );
+  }
+}
+
+class SimilarProduct extends StatefulWidget {
+  @override
+  _SimilarProductState createState() => _SimilarProductState();
+}
+
+class _SimilarProductState extends State<SimilarProduct> {
+  var products_list = [
+    {
+      "name": "Blazer",
+      "picture": "assets/images/products/blazer1.jpeg",
+      "old_price": 120,
+      "price": 85
+    },
+    {
+      "name": "Dress",
+      "picture": "assets/images/products/dress1.jpeg",
+      "old_price": 45,
+      "price": 89
+    },
+    {
+      "name": "Hills",
+      "picture": "assets/images/products/hills1.jpeg",
+      "old_price": 34,
+      "price": 67
+    },
+    {
+      "name": "Skirt",
+      "picture": "assets/images/products/skt1.jpeg",
+      "old_price": 67,
+      "price": 56
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      itemCount: products_list.length,
+      gridDelegate:
+          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+      itemBuilder: (BuildContext context, int index) {
+        return SingleProd(
+          prod_name: products_list[index]['name'],
+          prod_pics: products_list[index]['picture'],
+          prod_old_price: products_list[index]['old_price'],
+          prod_price: products_list[index]['price'],
+        );
+      },
+    );
+  }
+}
+
+class SimilarSingleProd extends StatelessWidget {
+  final prod_name;
+  final prod_pics;
+  final prod_old_price;
+  final prod_price;
+
+  const SimilarSingleProd(
+      {this.prod_name, this.prod_pics, this.prod_old_price, this.prod_price});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Card(
+        child: Hero(
+          tag: Text('Hero 1'),
+          child: Material(
+            child: InkWell(
+              /*Passing the value from Product to product details*/
+
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => ProductDetails(
+                      prod_name, prod_price, prod_old_price, prod_pics))),
+              child: GridTile(
+                footer: Container(
+                    color: Colors.white70,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: Text(prod_name,
+                                style: TextStyle(
+                                    color: Colors.black87,
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 16)),
+                          ),
+                          Text(
+                            "\$${prod_price}",
+                            style: TextStyle(
+                                color: Colors.redAccent,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w800,
+                                fontSize: 16),
+                          )
+                        ],
+                      ),
+                    )),
+                child: Image.asset(
+                  prod_pics,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

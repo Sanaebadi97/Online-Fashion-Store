@@ -47,34 +47,38 @@ flutter:
   #  - images/a_dot_ham.jpeg
 
   assets:
-    - assets/images/pic2.jpeg
-    - assets/images/pic6.jpeg
-    - assets/images/pic5.jpeg
-    - assets/images/pic4.jpeg
-    - assets/images/pic1.jpg
-    - assets/images/pic3.jpg
+     - assets/images/
+     - assets/images/categories/
+     - assets/images/products/
 
-    - assets/images/sana_profile.jpg
-
-    - assets/images/categories/accessories.png
-    - assets/images/categories/dress.png
-    - assets/images/categories/formal.png
-    - assets/images/categories/informal.png
-    - assets/images/categories/jeans.png
-    - assets/images/categories/shoe.png
-    - assets/images/categories/tshirt.png
-
-    - assets/images/products/blazer1.jpeg
-    - assets/images/products/blazer2.jpeg
-    - assets/images/products/dress1.jpeg
-    - assets/images/products/dress2.jpeg
-    - assets/images/products/hills1.jpeg
-    - assets/images/products/hills2.jpeg
-    - assets/images/products/pants1.jpg
-    - assets/images/products/pants2.jpeg
-    - assets/images/products/shoe1.jpg
-    - assets/images/products/skt1.jpeg
-    - assets/images/products/skt2.jpeg
+#    - assets/images/pic2.jpeg
+#    - assets/images/pic6.jpeg
+#    - assets/images/pic5.jpeg
+#    - assets/images/pic4.jpeg
+#    - assets/images/pic1.jpg
+#    - assets/images/pic3.jpg
+#
+#    - assets/images/sana_profile.jpg
+#
+#    - assets/images/categories/accessories.png
+#    - assets/images/categories/dress.png
+#    - assets/images/categories/formal.png
+#    - assets/images/categories/informal.png
+#    - assets/images/categories/jeans.png
+#    - assets/images/categories/shoe.png
+#    - assets/images/categories/tshirt.png
+#
+#    - assets/images/products/blazer1.jpeg
+#    - assets/images/products/blazer2.jpeg
+#    - assets/images/products/dress1.jpeg
+#    - assets/images/products/dress2.jpeg
+#    - assets/images/products/hills1.jpeg
+#    - assets/images/products/hills2.jpeg
+#    - assets/images/products/pants1.jpg
+#    - assets/images/products/pants2.jpeg
+#    - assets/images/products/shoe1.jpg
+#    - assets/images/products/skt1.jpeg
+#    - assets/images/products/skt2.jpeg
 
 
 

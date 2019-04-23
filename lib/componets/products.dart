@@ -17,29 +17,24 @@ class _ProductsState extends State<Products> {
       "old_price": 120,
       "price": 85
     },
-
     {
       "name": "Dress",
       "picture": "assets/images/products/dress1.jpeg",
       "old_price": 45,
       "price": 89
     },
-
     {
       "name": "Hills",
       "picture": "assets/images/products/hills1.jpeg",
       "old_price": 34,
       "price": 67
     },
-
-
     {
       "name": "Pants",
       "picture": "assets/images/products/pants1.jpg",
       "old_price": 67,
       "price": 45
     },
-
     {
       "name": "Shoe",
       "picture": "assets/images/products/shoe1.jpg",
@@ -52,7 +47,6 @@ class _ProductsState extends State<Products> {
       "old_price": 67,
       "price": 56
     },
-
   ];
 
   @override
@@ -87,10 +81,9 @@ class SingleProd extends StatelessWidget {
     return Container(
       child: Card(
         child: Hero(
-          tag: prod_name,
+          tag: Text('Hero 1'),
           child: Material(
             child: InkWell(
-
               /*Passing the value from Product to product details*/
 
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
@@ -98,28 +91,30 @@ class SingleProd extends StatelessWidget {
                       prod_name, prod_price, prod_old_price, prod_pics))),
               child: GridTile(
                 footer: Container(
-                  color: Colors.white70,
-                  child: ListTile(
-                    leading: Text(
-                      prod_name,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontFamily: 'Raleway'),
-                    ),
-                    title: Text(
-                      "\$$prod_price",
-                      style: TextStyle(
-                          color: Colors.redAccent,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: 'Raleway'),
-                    ),
-                    subtitle: Text("\$$prod_old_price",
-                        style: TextStyle(
-                            color: Colors.black87,
-                            fontFamily: 'Raleway',
-                            fontWeight: FontWeight.w800,
-                            decoration: TextDecoration.lineThrough)),
-                  ),
-                ),
+                    color: Colors.white70,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: Text(prod_name,
+                                style: TextStyle(
+                                    color: Colors.black87,
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 16)),
+                          ),
+                          Text(
+                            "\$${prod_price}",
+                            style: TextStyle(
+                                color: Colors.redAccent,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w800,
+                                fontSize: 16),
+                          )
+                        ],
+                      ),
+                    )),
                 child: Image.asset(
                   prod_pics,
                   fit: BoxFit.cover,

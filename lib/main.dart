@@ -126,9 +126,9 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: ListTile(
                 title:
-                    Text('Categories', style: TextStyle(fontFamily: 'Raleway')),
+                    Text('Shopping Cart', style: TextStyle(fontFamily: 'Raleway')),
                 leading: Icon(
-                  Icons.dashboard,
+                  Icons.shopping_cart,
                   color: Colors.redAccent,
                 ),
               ),
