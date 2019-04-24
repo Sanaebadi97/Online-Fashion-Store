@@ -120,40 +120,48 @@ class _LoginState extends State<Login> {
 //TODO:: make the logo show
 
           Container(
-            color: Colors.black.withOpacity(0.8),
+            color: Colors.white.withOpacity(0.8),
             width: double.infinity,
             height: double.infinity,
           ),
 
-          Container(
-              alignment: Alignment.topCenter,
-              child: Image.asset(
-                'assets/images/accessories.png',
-                width: 280.0,
-                height: 240.0,
-              )),
+//          Padding(
+//            padding: const EdgeInsets.fromLTRB(8,50,8,10),
+//            child: Container(
+//                alignment: Alignment.topCenter,
+//                child: Image.asset(
+//                  'assets/images/logo.png',
+//                  width: 100,
+//                  height: 100,
+//                )),
+//          ),
 
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 200.0),
+              padding: const EdgeInsets.only(top: 170.0),
               child: Center(
                 child: Form(
                     key: null,
                     child: ListView(
                       children: <Widget>[
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.fromLTRB(20,8,20,8),
                           child: Material(
-                            borderRadius: BorderRadius.circular(10.0),
-                            color: Colors.white.withOpacity(0.4),
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.grey.withOpacity(0.4),
                             elevation: 0.0,
                             child: Padding(
                               padding: const EdgeInsets.only(left: 12.0),
                               child: TextFormField(
+                                cursorColor: Colors.pinkAccent,
+                                style: TextStyle(
+                                  fontFamily: 'Raleway',
+                                ),
                                 controller: null,
                                 decoration: InputDecoration(
+                                  border: InputBorder.none,
                                   hintText: "Email",
-                                  icon: Icon(Icons.alternate_email),
+                                  icon: Icon(Icons.email),
                                 ),
                                 validator: (value) {
                                   if (value.isEmpty) {
@@ -172,18 +180,23 @@ class _LoginState extends State<Login> {
                         ),
 
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.fromLTRB(20,8,20,8),
                           child: Material(
-                            borderRadius: BorderRadius.circular(10.0),
-                            color: Colors.white.withOpacity(0.4),
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.grey.withOpacity(0.4),
                             elevation: 0.0,
                             child: Padding(
                               padding: const EdgeInsets.only(left: 12.0),
                               child: TextFormField(
+                                cursorColor: Colors.pinkAccent,
+                                style: TextStyle(
+                                  fontFamily: 'Raleway',
+                                ),
                                 controller: _passwordTextController,
                                 decoration: InputDecoration(
+                                  border: InputBorder.none,
                                   hintText: "Password",
-                                  icon: Icon(Icons.lock_outline),
+                                  icon: Icon(Icons.vpn_key),
                                 ),
                                 validator: (value) {
                                   if (value.isEmpty) {
@@ -199,10 +212,10 @@ class _LoginState extends State<Login> {
                         ),
 
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.fromLTRB(70, 8, 70, 8),
                           child: Material(
-                              borderRadius: BorderRadius.circular(20.0),
-                              color: Colors.blue.shade700,
+                              borderRadius: BorderRadius.circular(40.0),
+                              color: Colors.pinkAccent,
                               elevation: 0.0,
                               child: MaterialButton(
                                 onPressed: () {},
@@ -211,9 +224,9 @@ class _LoginState extends State<Login> {
                                   "Login",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
+                                      fontFamily: 'Raleway',
                                       color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0),
+                                      fontSize: 17.0),
                                 ),
                               )),
                         ),
@@ -223,7 +236,8 @@ class _LoginState extends State<Login> {
                             "Forgot password",
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              color: Colors.white,
+                              fontFamily: 'Raleway',
+                              color: Colors.black,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -235,16 +249,23 @@ class _LoginState extends State<Login> {
                             child: RichText(
                                 text: TextSpan(
                                     style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontWeight: FontWeight.w400,
-                                        fontSize: 16.0),
+                                        fontSize: 15.0),
                                     children: [
                                   TextSpan(
                                       text:
-                                          "Dont't have an accout? click here to"),
+                                          "Dont't have an accout ? click here to",
+                                      style: TextStyle(
+                                        fontFamily: 'Raleway',
+                                      )),
                                   TextSpan(
                                       text: " sign up!",
-                                      style: TextStyle(color: Colors.red))
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.pink,
+                                        fontFamily: 'Raleway',
+                                      ))
                                 ]))
 //                            Text("Dont't have an accout? click here to sign up!",textAlign: TextAlign.end, style: TextStyle(color: Colors.white,  fontWeight: FontWeight.w400, fontSize: 16.0),),
                             ),
@@ -252,47 +273,54 @@ class _LoginState extends State<Login> {
                           color: Colors.white,
                         ),
                         Text(
-                          "Other login in opntion",
+                          "Other login in option",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20.0),
+                              fontFamily: 'Raleway',
+                              color: Colors.black,
+                              fontSize: 17.0),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
+                        Center(
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: new Material(
-                                borderRadius: BorderRadius.circular(10.0),
-                                color: Colors.red,
-                                elevation: 0.0,
-                                child: MaterialButton(
-                                  onPressed: () {
-                                    handelSignIn();
-                                  },
-                                  minWidth: MediaQuery.of(context).size.width,
-                                  child: Row(
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: Image.asset(
-                                          'images/google.png',
-                                          width: 30.0,
-                                          height: 30.0,
+                            padding: const EdgeInsets.fromLTRB(40, 8, 40, 8),
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(40, 8, 40, 8),
+                              child: new Material(
+                                  borderRadius: BorderRadius.circular(40.0),
+                                  color: Colors.pinkAccent,
+                                  elevation: 0.0,
+                                  child: MaterialButton(
+                                    onPressed: () {
+                                      handelSignIn();
+                                    },
+                                    minWidth: MediaQuery.of(context).size.width,
+                                    child: Row(
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: Image.asset(
+                                            'assets/images/google.png',
+                                            width: 20,
+                                            height: 20,
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        " google",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 22.0),
-                                      ),
-                                    ],
-                                  ),
-                                )),
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              17, 5, 5, 5),
+                                          child: Text(
+                                            " google",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                fontFamily: 'Raleway',
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 20.0),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )),
+                            ),
                           ),
                         ),
                       ],
