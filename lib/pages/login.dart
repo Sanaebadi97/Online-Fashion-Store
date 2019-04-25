@@ -112,7 +112,7 @@ class _LoginState extends State<Login> {
       body: Stack(
         children: <Widget>[
           Image.asset(
-            'assets/images/back.jpg',
+            'assets/images/login_bg.jpeg',
             fit: BoxFit.fill,
             width: double.infinity,
             height: double.infinity,

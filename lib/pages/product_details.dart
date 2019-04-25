@@ -370,25 +370,61 @@ class _SimilarProductState extends State<SimilarProduct> {
   var products_list = [
     {
       "name": "Blazer",
-      "picture": "assets/images/products/blazer1.jpeg",
+      "picture": "assets/images/similar_products/1.jpeg",
       "old_price": 120,
       "price": 85
     },
     {
       "name": "Dress",
-      "picture": "assets/images/products/dress1.jpeg",
+      "picture": "assets/images/similar_products/4.jpeg",
       "old_price": 45,
       "price": 89
     },
     {
       "name": "Hills",
-      "picture": "assets/images/products/hills1.jpeg",
+      "picture": "assets/images/similar_products/5.jpeg",
       "old_price": 34,
       "price": 67
     },
     {
       "name": "Skirt",
-      "picture": "assets/images/products/skt1.jpeg",
+      "picture": "assets/images/similar_products/8.jpeg",
+      "old_price": 67,
+      "price": 56
+    },
+    {
+      "name": "Skirt1",
+      "picture": "assets/images/similar_products/9.jpeg",
+      "old_price": 67,
+      "price": 56
+    },
+    {
+      "name": "Skirt12",
+      "picture": "assets/images/similar_products/11.jpeg",
+      "old_price": 67,
+      "price": 56
+    },
+    {
+      "name": "Skirt13",
+      "picture": "assets/images/similar_products/12.jpeg",
+      "old_price": 67,
+      "price": 56
+    },
+    {
+      "name": "Skirt14",
+      "picture": "assets/images/similar_products/13.jpeg",
+      "old_price": 67,
+      "price": 56
+    },
+    {
+      "name": "Skirt14",
+      "picture": "assets/images/similar_products/15.jpeg",
+      "old_price": 67,
+      "price": 56
+    },
+    {
+      "name": "Skirt14",
+      "picture": "assets/images/similar_products/16.jpeg",
       "old_price": 67,
       "price": 56
     },

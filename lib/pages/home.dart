@@ -18,11 +18,12 @@ class _HomePageState extends State<HomePage> {
       child: new Carousel(
         boxFit: BoxFit.cover,
         images: [
-          AssetImage('assets/images/pic1.jpg'),
-          AssetImage('assets/images/pic2.jpeg'),
-          AssetImage('assets/images/pic4.jpeg'),
-          AssetImage('assets/images/pic5.jpeg'),
-          AssetImage('assets/images/pic6.jpeg'),
+          AssetImage('assets/images/slider/2.jpeg'),
+          AssetImage('assets/images/slider/3.jpeg'),
+          AssetImage('assets/images/slider/6.jpeg'),
+          AssetImage('assets/images/slider/7.jpeg'),
+          AssetImage('assets/images/slider/10.jpeg'),
+          AssetImage('assets/images/slider/14.jpeg'),
         ],
         autoplay: true,
         dotSize: 6,

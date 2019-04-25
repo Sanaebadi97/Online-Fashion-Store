@@ -13,37 +13,61 @@ class _ProductsState extends State<Products> {
   var products_list = [
     {
       "name": "Blazer",
-      "picture": "assets/images/products/blazer1.jpeg",
+      "picture": "assets/images/recent_products/17.jpeg",
       "old_price": 120,
       "price": 85
     },
     {
       "name": "Dress",
-      "picture": "assets/images/products/dress1.jpeg",
+      "picture": "assets/images/recent_products/18.jpeg",
       "old_price": 45,
       "price": 89
     },
     {
       "name": "Hills",
-      "picture": "assets/images/products/hills1.jpeg",
+      "picture": "assets/images/recent_products/19.jpeg",
       "old_price": 34,
       "price": 67
     },
     {
       "name": "Pants",
-      "picture": "assets/images/products/pants1.jpg",
+      "picture": "assets/images/recent_products/20.jpeg",
       "old_price": 67,
       "price": 45
     },
     {
       "name": "Shoe",
-      "picture": "assets/images/products/shoe1.jpg",
+      "picture": "assets/images/recent_products/21.jpeg",
       "old_price": 400,
       "price": 389
     },
     {
       "name": "Skirt",
-      "picture": "assets/images/products/skt1.jpeg",
+      "picture": "assets/images/recent_products/22.jpeg",
+      "old_price": 67,
+      "price": 56
+    },
+    {
+      "name": "Skirt1",
+      "picture": "assets/images/recent_products/23.jpeg",
+      "old_price": 67,
+      "price": 56
+    },
+    {
+      "name": "Skirt12",
+      "picture": "assets/images/recent_products/24.jpeg",
+      "old_price": 67,
+      "price": 56
+    },
+    {
+      "name": "Skirt13",
+      "picture": "assets/images/recent_products/25.jpeg",
+      "old_price": 67,
+      "price": 56
+    },
+    {
+      "name": "Skirt14",
+      "picture": "assets/images/recent_products/26.jpeg",
       "old_price": 67,
       "price": 56
     },
