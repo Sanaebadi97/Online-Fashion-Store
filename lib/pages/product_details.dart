@@ -2,7 +2,6 @@ import 'package:Sana_Shop/componets/products.dart';
 import 'package:Sana_Shop/pages/home.dart';
 import 'package:flutter/material.dart';
 
-
 class ProductDetails extends StatefulWidget {
   final prod_details_name;
   final prod_details_new_price;

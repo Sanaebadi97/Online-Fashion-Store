@@ -30,7 +30,6 @@ class _ShoppingCartState extends State<ShoppingCart> {
       /*================== Card Products ============*/
       body: CartProducts(),
 
-
       /*================== Card Products ============*/
 
       bottomNavigationBar: Padding(

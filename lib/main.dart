@@ -11,5 +11,8 @@ void main() {
   runApp(MaterialApp(
     home: Login(),
     debugShowCheckedModeBanner: false,
+    theme: ThemeData(
+      primaryColor: Colors.pinkAccent
+    ),
   ));
 }

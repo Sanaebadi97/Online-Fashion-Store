@@ -112,7 +112,6 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height / 3;
     return Scaffold(
       body: Stack(
         children: <Widget>[

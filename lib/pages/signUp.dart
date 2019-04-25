@@ -24,6 +24,7 @@ class _SignUpState extends State<SignUp> {
   TextEditingController _nameTextController = TextEditingController();
 
   String gender;
+  String groupValue = "male";
 
   SharedPreferences preferences;
   bool loading = false;
@@ -115,7 +116,6 @@ class _SignUpState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height / 3;
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -146,7 +146,7 @@ class _SignUpState extends State<SignUp> {
 
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 100.0),
+              padding: const EdgeInsets.only(top: 38.0),
               child: Center(
                 child: Form(
                     key: _formKey,
@@ -165,7 +165,7 @@ class _SignUpState extends State<SignUp> {
                                 style: TextStyle(
                                   fontFamily: 'Raleway',
                                 ),
-                                controller: _passwordTextController,
+                                controller: _nameTextController,
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Full Name",
@@ -222,26 +222,32 @@ class _SignUpState extends State<SignUp> {
                             color: Colors.grey.withOpacity(0.4),
                             elevation: 0.0,
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 12.0),
-                              child: TextFormField(
-                                cursorColor: Colors.pinkAccent,
-                                style: TextStyle(
-                                  fontFamily: 'Raleway',
+                              padding: const EdgeInsets.only(left: 0.0),
+                              child: ListTile(
+                                title: TextFormField(
+                                  controller: _passwordTextController,
+                                  obscureText: true,
+                                  cursorColor: Colors.pinkAccent,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: "Password",
+                                    icon: Icon(Icons.vpn_key),
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Raleway',
+                                  ),
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return "The password field cannot be empty";
+                                    } else if (value.length < 6) {
+                                      return "the password has to be at least 6 characters long";
+                                    }
+                                    return null;
+                                  },
                                 ),
-                                controller: _passwordTextController,
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  hintText: "Password",
-                                  icon: Icon(Icons.vpn_key),
+                                trailing: Icon(
+                                  Icons.remove_red_eye,
                                 ),
-                                validator: (value) {
-                                  if (value.isEmpty) {
-                                    return "The password field cannot be empty";
-                                  } else if (value.length < 6) {
-                                    return "the password has to be at least 6 characters long";
-                                  }
-                                  return null;
-                                },
                               ),
                             ),
                           ),
@@ -253,28 +259,80 @@ class _SignUpState extends State<SignUp> {
                             color: Colors.grey.withOpacity(0.4),
                             elevation: 0.0,
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 12.0),
-                              child: TextFormField(
-                                cursorColor: Colors.pinkAccent,
-                                style: TextStyle(
-                                  fontFamily: 'Raleway',
+                              padding: const EdgeInsets.only(left: 0.0),
+                              child: ListTile(
+                                title: TextFormField(
+                                  cursorColor: Colors.pinkAccent,
+                                  style: TextStyle(
+                                    fontFamily: 'Raleway',
+                                  ),
+                                  controller: _confirmPasswordController,
+                                  obscureText: true,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: "Confirm Password",
+                                    icon: Icon(Icons.vpn_key),
+                                  ),
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return "The password field cannot be empty";
+                                    } else if (value.length < 6) {
+                                      return "the password has to be at least 6 characters long";
+                                    } else if (_passwordTextController.text !=
+                                        value) {
+                                      return "the password do not match";
+                                    }
+                                    return null;
+                                  },
                                 ),
-                                controller: _passwordTextController,
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  hintText: "Confirm Password",
-                                  icon: Icon(Icons.vpn_key),
+                                trailing: Icon(
+                                  Icons.remove_red_eye,
                                 ),
-                                validator: (value) {
-                                  if (value.isEmpty) {
-                                    return "The password field cannot be empty";
-                                  } else if (value.length < 6) {
-                                    return "the password has to be at least 6 characters long";
-                                  }
-                                  return null;
-                                },
                               ),
                             ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(28, 0, 28, 0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Expanded(
+                                child: ListTile(
+                                  title: Text(
+                                    'male',
+                                    textAlign: TextAlign.end,
+                                    style: TextStyle(
+                                        fontFamily: 'Raleway',
+                                        color: Colors.black,
+                                        fontSize: 17.0),
+                                  ),
+                                  trailing: Radio(
+                                      activeColor: Colors.pinkAccent,
+                                      value: 'male',
+                                      groupValue: groupValue,
+                                      onChanged: (e) => valueChanged(e)),
+                                ),
+                              ),
+                              Expanded(
+                                child: ListTile(
+                                  title: Text(
+                                    'female',
+                                    textAlign: TextAlign.end,
+                                    style: TextStyle(
+                                        fontFamily: 'Raleway',
+                                        color: Colors.black,
+                                        fontSize: 17.0),
+                                  ),
+                                  trailing: Radio(
+                                    activeColor: Colors.pinkAccent,
+                                    value: 'female',
+                                    groupValue: groupValue,
+                                    onChanged: (e) => valueChanged(e),
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                         ),
                         Padding(
@@ -398,5 +456,18 @@ class _SignUpState extends State<SignUp> {
         ],
       ),
     );
+  }
+
+  //Radio Value Changed
+  valueChanged(e) {
+    setState(() {
+      if (e == "male") {
+        groupValue = e;
+        gender = e;
+      } else if (e == "female") {
+        groupValue = e;
+        gender = e;
+      }
+    });
   }
 }
