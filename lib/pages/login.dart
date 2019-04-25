@@ -25,6 +25,7 @@ class _LoginState extends State<Login> {
   SharedPreferences preferences;
   bool loading = false;
   bool isLogedin = false;
+  bool hidePass = true;
 
   @override
   void initState() {
@@ -190,26 +191,39 @@ class _LoginState extends State<Login> {
                             color: Colors.grey.withOpacity(0.4),
                             elevation: 0.0,
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 12.0),
-                              child: TextFormField(
-                                cursorColor: Colors.pinkAccent,
-                                style: TextStyle(
-                                  fontFamily: 'Raleway',
+                              padding: const EdgeInsets.only(left: 0.0),
+                              child: ListTile(
+                                title: TextFormField(
+                                  controller: _passwordTextController,
+                                  obscureText: hidePass,
+                                  cursorColor: Colors.pinkAccent,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: "Password",
+                                    icon: Icon(Icons.vpn_key),
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Raleway',
+                                  ),
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return "The password field cannot be empty";
+                                    } else if (value.length < 6) {
+                                      return "the password has to be at least 6 characters long";
+                                    }
+                                    return null;
+                                  },
                                 ),
-                                controller: _passwordTextController,
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  hintText: "Password",
-                                  icon: Icon(Icons.vpn_key),
+                                trailing: IconButton(
+                                  icon: Icon(
+                                    Icons.remove_red_eye,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      hidePass = false;
+                                    });
+                                  },
                                 ),
-                                validator: (value) {
-                                  if (value.isEmpty) {
-                                    return "The password field cannot be empty";
-                                  } else if (value.length < 6) {
-                                    return "the password has to be at least 6 characters long";
-                                  }
-                                  return null;
-                                },
                               ),
                             ),
                           ),

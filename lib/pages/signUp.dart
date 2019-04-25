@@ -1,3 +1,4 @@
+import 'package:Sana_Shop/db/users.dart';
 import 'package:Sana_Shop/pages/home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -18,6 +19,8 @@ class _SignUpState extends State<SignUp> {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
 
+  UserServices _userServices = UserServices();
+
   TextEditingController _emailTextController = TextEditingController();
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _confirmPasswordController = TextEditingController();
@@ -29,6 +32,7 @@ class _SignUpState extends State<SignUp> {
   SharedPreferences preferences;
   bool loading = false;
   bool isLogedin = false;
+  bool hidePass = true;
 
   @override
   void initState() {
@@ -226,7 +230,7 @@ class _SignUpState extends State<SignUp> {
                               child: ListTile(
                                 title: TextFormField(
                                   controller: _passwordTextController,
-                                  obscureText: true,
+                                  obscureText: hidePass,
                                   cursorColor: Colors.pinkAccent,
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
@@ -245,8 +249,19 @@ class _SignUpState extends State<SignUp> {
                                     return null;
                                   },
                                 ),
-                                trailing: Icon(
-                                  Icons.remove_red_eye,
+                                trailing: Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(2, 2, 2, 2),
+                                  child: IconButton(
+                                    icon: Icon(
+                                      Icons.remove_red_eye,
+                                    ),
+                                    onPressed: () {
+                                      setState(() {
+                                        hidePass = false;
+                                      });
+                                    },
+                                  ),
                                 ),
                               ),
                             ),
@@ -267,7 +282,7 @@ class _SignUpState extends State<SignUp> {
                                     fontFamily: 'Raleway',
                                   ),
                                   controller: _confirmPasswordController,
-                                  obscureText: true,
+                                  obscureText: hidePass,
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
                                     hintText: "Confirm Password",
@@ -285,8 +300,17 @@ class _SignUpState extends State<SignUp> {
                                     return null;
                                   },
                                 ),
-                                trailing: Icon(
-                                  Icons.remove_red_eye,
+                                trailing: Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(2, 2, 2, 2),
+                                  child: IconButton(
+                                    icon: Icon(Icons.remove_red_eye),
+                                    onPressed: () {
+                                      setState(() {
+                                        hidePass = false;
+                                      });
+                                    },
+                                  ),
                                 ),
                               ),
                             ),
@@ -342,7 +366,10 @@ class _SignUpState extends State<SignUp> {
                               color: Colors.pinkAccent,
                               elevation: 0.0,
                               child: MaterialButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  /*The Sign Up method Call*/
+                                  validateForm();
+                                },
                                 minWidth: MediaQuery.of(context).size.width,
                                 child: Text(
                                   "Register",
@@ -469,5 +496,32 @@ class _SignUpState extends State<SignUp> {
         gender = e;
       }
     });
+  }
+
+  //THE SIGN UP METHOD
+  Future validateForm() async {
+    FormState formState = _formKey.currentState;
+    if (formState.validate()) {
+      formState.reset();
+      FirebaseUser user = await firebaseAuth.currentUser();
+      if (user == null) {
+        firebaseAuth
+            .createUserWithEmailAndPassword(
+                email: _emailTextController.text,
+                password: _passwordTextController.text)
+            .then((user) => {
+                  _userServices.createUser(user.uid.toString(), {
+                    "username": user.displayName,
+                    "email": user.email,
+                    "userId": user.uid,
+                    "gender": gender,
+                  })
+                })
+            .catchError((err) => {print(err.toString())});
+
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (BuildContext context) => HomePage()));
+      }
+    }
   }
 }
