@@ -1,5 +1,4 @@
 import 'package:Sana_Shop/pages/home.dart';
-import 'package:Sana_Shop/pages/signUp.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
@@ -8,12 +7,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Login extends StatefulWidget {
+class SignUp extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _LoginState extends State<Login> {
+class _SignUpState extends State<SignUp> {
   /*Create the google sign in var && firebase auth && shared pref*/
   final GoogleSignIn googleSignIn = GoogleSignIn();
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
@@ -21,6 +20,10 @@ class _LoginState extends State<Login> {
 
   TextEditingController _emailTextController = TextEditingController();
   TextEditingController _passwordTextController = TextEditingController();
+  TextEditingController _confirmPasswordController = TextEditingController();
+  TextEditingController _nameTextController = TextEditingController();
+
+  String gender;
 
   SharedPreferences preferences;
   bool loading = false;
@@ -143,12 +146,41 @@ class _LoginState extends State<Login> {
 
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 165.0),
+              padding: const EdgeInsets.only(top: 100.0),
               child: Center(
                 child: Form(
                     key: _formKey,
                     child: ListView(
                       children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
+                          child: Material(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.grey.withOpacity(0.4),
+                            elevation: 0.0,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 12.0),
+                              child: TextFormField(
+                                cursorColor: Colors.pinkAccent,
+                                style: TextStyle(
+                                  fontFamily: 'Raleway',
+                                ),
+                                controller: _passwordTextController,
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: "Full Name",
+                                  icon: Icon(Icons.person),
+                                ),
+                                validator: (value) {
+                                  if (value.isEmpty) {
+                                    return "The name field cannot be empty";
+                                  }
+                                  return null;
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
                           child: Material(
@@ -183,7 +215,6 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                         ),
-
                         Padding(
                           padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
                           child: Material(
@@ -215,7 +246,37 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                         ),
-
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
+                          child: Material(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.grey.withOpacity(0.4),
+                            elevation: 0.0,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 12.0),
+                              child: TextFormField(
+                                cursorColor: Colors.pinkAccent,
+                                style: TextStyle(
+                                  fontFamily: 'Raleway',
+                                ),
+                                controller: _passwordTextController,
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: "Confirm Password",
+                                  icon: Icon(Icons.vpn_key),
+                                ),
+                                validator: (value) {
+                                  if (value.isEmpty) {
+                                    return "The password field cannot be empty";
+                                  } else if (value.length < 6) {
+                                    return "the password has to be at least 6 characters long";
+                                  }
+                                  return null;
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(70, 8, 70, 8),
                           child: Material(
@@ -226,7 +287,7 @@ class _LoginState extends State<Login> {
                                 onPressed: () {},
                                 minWidth: MediaQuery.of(context).size.width,
                                 child: Text(
-                                  "Login",
+                                  "Register",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontFamily: 'Raleway',
@@ -235,20 +296,6 @@ class _LoginState extends State<Login> {
                                 ),
                               )),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "Forgot password",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Raleway',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ),
-//                          Expanded(child: Container()),
-
                         Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: RichText(
@@ -260,19 +307,14 @@ class _LoginState extends State<Login> {
                                     children: [
                                   TextSpan(
                                       text:
-                                          "Dont't have an accout ? click here to",
+                                          "already have an accout ? click here to",
                                       style: TextStyle(
                                         fontFamily: 'Raleway',
                                       )),
                                   TextSpan(
-                                      text: " sign up!",
+                                      text: " login!",
                                       recognizer: new TapGestureRecognizer()
-                                        ..onTap = () => Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder:
-                                                    (BuildContext context) =>
-                                                        SignUp())),
+                                        ..onTap = () => Navigator.pop(context),
                                       style: TextStyle(
                                         fontSize: 18,
                                         color: Colors.pink,
