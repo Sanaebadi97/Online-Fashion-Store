@@ -138,7 +138,7 @@ class _LoginState extends State<Login> {
 
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 170.0),
+              padding: const EdgeInsets.only(top: 165.0),
               child: Center(
                 child: Form(
                     key: null,
@@ -336,7 +336,7 @@ class _LoginState extends State<Login> {
                 alignment: Alignment.center,
                 color: Colors.white.withOpacity(0.9),
                 child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.pinkAccent),
                 ),
               ),
             ),
