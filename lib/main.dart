@@ -10,6 +10,7 @@ void main() {
 
   runApp(MaterialApp(
     home: Login(),
+    title: 'Sana Shop',
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
       primaryColor: Colors.pinkAccent
