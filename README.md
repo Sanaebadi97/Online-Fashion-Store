@@ -1,6 +1,13 @@
 # Online-Fashion-Store
 
-A new Flutter application.
+
+Shop for clothing and fashion online
+Which is expandable.
+And I will complete this development in the future
+
+And you can certainly help me develop
+So let's start :)
+
 
 ## Getting Started
 
@@ -15,6 +22,7 @@ A new Flutter application.
 - Material Design
 - http Connection
 - async
+
 -...
 
 
