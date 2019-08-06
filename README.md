@@ -23,7 +23,7 @@ So let's start :)
 - http Connection
 - async
 
--...
+- ...
 
 
 
