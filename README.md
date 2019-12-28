@@ -3,7 +3,7 @@
 
 Shop for clothing and fashion online
 Which is expandable.
-And I will complete this de
+And I will compl
 
 And you can certainly help me develop
 So let's start :)
