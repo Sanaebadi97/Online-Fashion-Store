@@ -5,8 +5,8 @@ Shop for clothing and fashion online
 Which is expandable.
 
 
-And you can certainly help me develop
-So let's start :)
+**And you can certainly help me develop
+So let's start :)**
 
 
 ## Getting Started
