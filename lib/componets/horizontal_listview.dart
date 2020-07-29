@@ -6,13 +6,13 @@ import 'package:flutter/material.dart';
 class HorizontalList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // ignore: todo
     // TODO: implement build
     return Container(
       height: 100,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-
           Category(
             image_location: 'assets/images/categories/shoe.png',
             image_caption: 'shoe',
@@ -21,7 +21,6 @@ class HorizontalList extends StatelessWidget {
             image_location: 'assets/images/categories/pendant.png',
             image_caption: 'accessories',
           ),
-
           Category(
             image_location: 'assets/images/categories/dress.png',
             image_caption: 'dress',
@@ -30,7 +29,6 @@ class HorizontalList extends StatelessWidget {
             image_location: 'assets/images/categories/shirt.png',
             image_caption: 'shirt',
           ),
-
           Category(
             image_location: 'assets/images/categories/jeans.png',
             image_caption: 'pants',
@@ -43,7 +41,6 @@ class HorizontalList extends StatelessWidget {
             image_location: 'assets/images/categories/informal.png',
             image_caption: 'informal',
           ),
-
         ],
       ),
     );
@@ -51,13 +48,17 @@ class HorizontalList extends StatelessWidget {
 }
 
 class Category extends StatelessWidget {
+  // ignore: non_constant_identifier_names
   final String image_location;
+  // ignore: non_constant_identifier_names
   final String image_caption;
 
+  // ignore: non_constant_identifier_names
   const Category({this.image_location, this.image_caption});
 
   @override
   Widget build(BuildContext context) {
+    // ignore: todo
     // TODO: implement build
     return Padding(
       padding: const EdgeInsets.all(2),
@@ -78,7 +79,10 @@ class Category extends StatelessWidget {
                 alignment: Alignment.topCenter,
                 child: Text(
                   image_caption,
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold,fontFamily: 'Raleway'),
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Raleway'),
                 ),
               ),
             ),

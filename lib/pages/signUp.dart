@@ -121,6 +121,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: Stack(
         children: <Widget>[
           Image.asset(
@@ -129,6 +130,7 @@ class _SignUpState extends State<SignUp> {
             width: double.infinity,
             height: double.infinity,
           ),
+// ignore: todo
 //TODO:: make the logo show
 
           Container(
@@ -204,6 +206,7 @@ class _SignUpState extends State<SignUp> {
                                   hintText: "Email",
                                   icon: Icon(Icons.email),
                                 ),
+                                // ignore: missing_return
                                 validator: (value) {
                                   if (value.isEmpty) {
                                     Pattern pattern =
@@ -439,6 +442,7 @@ class _SignUpState extends State<SignUp> {
                                           padding: const EdgeInsets.all(4.0),
                                           child: Image.asset(
                                             'assets/images/google.png',
+                                            color: Colors.white,
                                             width: 18,
                                             height: 18,
                                           ),
@@ -453,7 +457,7 @@ class _SignUpState extends State<SignUp> {
                                                 fontFamily: 'Raleway',
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.w400,
-                                                fontSize: 14.0),
+                                                fontSize: 12.0),
                                           ),
                                         ),
                                       ],

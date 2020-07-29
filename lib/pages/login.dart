@@ -114,6 +114,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: Stack(
         children: <Widget>[
           Image.asset(
@@ -168,6 +169,7 @@ class _LoginState extends State<Login> {
                                   hintText: "Email",
                                   icon: Icon(Icons.email),
                                 ),
+                                // ignore: missing_return
                                 validator: (value) {
                                   if (value.isEmpty) {
                                     Pattern pattern =
@@ -236,10 +238,7 @@ class _LoginState extends State<Login> {
                               color: Colors.pinkAccent,
                               elevation: 0.0,
                               child: MaterialButton(
-                                onPressed: () {
-
-
-                                },
+                                onPressed: () {},
                                 minWidth: MediaQuery.of(context).size.width,
                                 child: Text(
                                   "Login",
@@ -328,6 +327,7 @@ class _LoginState extends State<Login> {
                                           padding: const EdgeInsets.all(4.0),
                                           child: Image.asset(
                                             'assets/images/google.png',
+                                            color: Colors.white,
                                             width: 18,
                                             height: 18,
                                           ),
@@ -342,7 +342,7 @@ class _LoginState extends State<Login> {
                                                 fontFamily: 'Raleway',
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.w400,
-                                                fontSize: 14.0),
+                                                fontSize: 12.0),
                                           ),
                                         ),
                                       ],
