@@ -6,6 +6,7 @@ class CartProducts extends StatefulWidget {
 }
 
 class _CartProductsState extends State<CartProducts> {
+  // ignore: non_constant_identifier_names
   var products_on_the_cart = [
     {
       "name": "Blazer",
@@ -52,11 +53,17 @@ class _CartProductsState extends State<CartProducts> {
 }
 
 class SingleCartProduct extends StatelessWidget {
+  // ignore: non_constant_identifier_names
   final cart_prod_name;
+  // ignore: non_constant_identifier_names
   final cart_prod_pics;
+  // ignore: non_constant_identifier_names
   final cart_prod_price;
+  // ignore: non_constant_identifier_names
   final cart_prod_color;
+  // ignore: non_constant_identifier_names
   final cart_prod_size;
+  // ignore: non_constant_identifier_names
   final cart_prod_quantity;
 
   const SingleCartProduct(
@@ -139,12 +146,18 @@ class SingleCartProduct extends StatelessWidget {
         trailing: Column(
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.arrow_drop_up,size: 7,),
+              icon: Icon(
+                Icons.arrow_drop_up,
+                size: 7,
+              ),
               onPressed: () {},
             ),
             Text('$cart_prod_quantity'),
             IconButton(
-              icon: Icon(Icons.arrow_drop_down,size: 10,),
+              icon: Icon(
+                Icons.arrow_drop_down,
+                size: 10,
+              ),
               onPressed: () {},
             ),
           ],

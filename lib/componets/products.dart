@@ -1,4 +1,5 @@
 import 'package:Sana_Shop/pages/product_details.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // ignore: slash_for_doc_comments
@@ -10,6 +11,7 @@ class Products extends StatefulWidget {
 }
 
 class _ProductsState extends State<Products> {
+  // ignore: non_constant_identifier_names
   var products_list = [
     {
       "name": "Blazer",
@@ -77,6 +79,8 @@ class _ProductsState extends State<Products> {
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: products_list.length,
+      shrinkWrap: true,
+      physics: const ClampingScrollPhysics(),
       gridDelegate:
           SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (BuildContext context, int index) {
@@ -95,13 +99,24 @@ class _ProductsState extends State<Products> {
 }
 
 class SingleProd extends StatelessWidget {
+  // ignore: non_constant_identifier_names
   final prod_name;
+  // ignore: non_constant_identifier_names
   final prod_pics;
+  // ignore: non_constant_identifier_names
   final prod_old_price;
+  // ignore: non_constant_identifier_names
   final prod_price;
 
   const SingleProd(
-      {this.prod_name, this.prod_pics, this.prod_old_price, this.prod_price});
+      // ignore: non_constant_identifier_names
+      {this.prod_name,
+      // ignore: non_constant_identifier_names
+      this.prod_pics,
+      // ignore: non_constant_identifier_names
+      this.prod_old_price,
+      // ignore: non_constant_identifier_names
+      this.prod_price});
 
   @override
   Widget build(BuildContext context) {
@@ -132,6 +147,7 @@ class SingleProd extends StatelessWidget {
                                     fontSize: 16)),
                           ),
                           Text(
+                            // ignore: unnecessary_brace_in_string_interps
                             "\$${prod_price}",
                             style: TextStyle(
                                 color: Colors.redAccent,
@@ -152,5 +168,11 @@ class SingleProd extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('prod_old_price', prod_old_price));
   }
 }

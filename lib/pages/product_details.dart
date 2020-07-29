@@ -3,9 +3,13 @@ import 'package:Sana_Shop/pages/home.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetails extends StatefulWidget {
+  // ignore: non_constant_identifier_names
   final prod_details_name;
+  // ignore: non_constant_identifier_names
   final prod_details_new_price;
+  // ignore: non_constant_identifier_names
   final prod_details_old_price;
+  // ignore: non_constant_identifier_names
   final prod_details_pic;
 
   const ProductDetails(this.prod_details_name, this.prod_details_new_price,
@@ -366,6 +370,7 @@ class SimilarProduct extends StatefulWidget {
 }
 
 class _SimilarProductState extends State<SimilarProduct> {
+  // ignore: non_constant_identifier_names
   var products_list = [
     {
       "name": "Blazer",
@@ -448,13 +453,24 @@ class _SimilarProductState extends State<SimilarProduct> {
 }
 
 class SimilarSingleProd extends StatelessWidget {
+  // ignore: non_constant_identifier_names
   final prod_name;
+  // ignore: non_constant_identifier_names
   final prod_pics;
+  // ignore: non_constant_identifier_names
   final prod_old_price;
+  // ignore: non_constant_identifier_names
   final prod_price;
 
   const SimilarSingleProd(
-      {this.prod_name, this.prod_pics, this.prod_old_price, this.prod_price});
+      // ignore: non_constant_identifier_names
+      {this.prod_name,
+      // ignore: non_constant_identifier_names
+      this.prod_pics,
+      // ignore: non_constant_identifier_names
+      this.prod_old_price,
+      // ignore: non_constant_identifier_names
+      this.prod_price});
 
   @override
   Widget build(BuildContext context) {
@@ -485,6 +501,7 @@ class SimilarSingleProd extends StatelessWidget {
                                     fontSize: 16)),
                           ),
                           Text(
+                            // ignore: unnecessary_brace_in_string_interps
                             "\$${prod_price}",
                             style: TextStyle(
                                 color: Colors.redAccent,
